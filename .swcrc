@@ -1,0 +1,52 @@
+{
+    // JavaScript/TypeScript 编译器配置
+    "jsc": {
+        // 解析器配置
+        "parser": {
+            "syntax": "typescript",      // 使用 TypeScript 语法解析
+            "tsx": true,                 // 支持 TSX/JSX 语法
+            "decorators": true,          // 启用装饰器语法支持
+            "dynamicImport": true        // 支持动态导入 import()
+        },
+        
+        // 代码转换配置
+        "transform": {
+            "legacyDecorator": true,     // 使用旧版装饰器语法（Stage 1）
+            "decoratorMetadata": true,   // 启用装饰器元数据支持（用于依赖注入等）
+        
+            // React 相关转换配置
+            "react": {
+                "runtime": "automatic",                   // 使用 React 17+ 的自动运行时
+                "pragma": "React.createElement",           // JSX 转换函数
+                "pragmaFrag": "React.Fragment",           // Fragment 转换函数
+            "refresh": true,                              // 启用 React Fast Refresh 支持
+                "development": false                      // 生产模式，不包含开发时的额外信息
+            }
+        },
+        
+        "target": "es2022",              // 编译目标为 ES2022 标准
+        "loose": true,                   // 启用宽松模式，生成更简洁的代码
+        "externalHelpers": true,         // 使用外部辅助函数，减少重复代码
+        "keepClassNames": true           // 保留类名，便于调试和反射
+    },
+    
+    // 模块系统配置
+    "module": {
+        "type": "es6",                   // 输出 ES6 模块格式
+        "strict": true,                  // 启用严格模式
+        "strictMode": true,              // 在输出中添加 "use strict"
+        "lazy": true,                    // 启用懒加载优化
+        "noInterop": false               // 启用与 CommonJS 的互操作性
+    },
+    
+    // 代码优化配置
+    "minify": false,                     // 不压缩代码（通常由其他工具处理）
+    "sourceMaps": true,                  // 生成 source map 用于调试
+    
+    // 排除不需要处理的文件和目录
+    "exclude": [
+        "node_modules/**",               // 排除 npm 包目录
+        ".git/**",                       // 排除 Git 版本控制目录
+        "dist/**"                        // 排除构建输出目录
+    ]
+}
