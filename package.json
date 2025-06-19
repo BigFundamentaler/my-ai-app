@@ -10,8 +10,7 @@
     "test:uidiff": "npx backstop test",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "tsc --noEmit & eslint ./src --ext .ts,.tsx,.js --fix",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prepare": "husky"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "keywords": [],
   "author": "",
@@ -38,7 +37,7 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1",
-    "yargs-parser": "^22.0.0"
+    "yargs-parser": "^20.2.9"
   },
   "dependencies": {
     "@welldone-software/why-did-you-render": "^10.0.1",

@@ -1,5 +1,5 @@
 const { resolve, join } = require('path');
-const HtmlWbpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const BundleAnalyzerPlugin =
@@ -21,7 +21,7 @@ module.exports = {
         assetModuleFilename: 'images/[name].[ext]',
     },
     plugins: [
-        new HtmlWbpackPlugin({
+        new HtmlWebpackPlugin({
             filename: 'index.html',
             favicon: './public/favicon.ico',
             template: resolve(__dirname, '../src/index-dev.html'),
